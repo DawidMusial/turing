@@ -13,20 +13,23 @@
 	
 	char *znak;
 	int l_znakow;
-	skladnia_t skladnia;
+
 
 	} tape_t;
 */
 
 
-int inicjuj(tape_t * tape, int rozm_tasmy, int rozm_slownika){
+int inicjuj_t(skladnia_t *skladnia, tape_t *tape){
+	
+	if(tape->l_znakow == 0 || skladnia->l_z_skladni == 0) exit(EXIT_FAILURE);
 
-	tape->znak = calloc(rozm_tasmy, sizeof(char));
-	for(int i = 0; i<rozm_tasmy; i++){	 
-		if(i == 0 || i == rozm_tasmy) tape->znak[i] = '!';
+
+	tape->znak = calloc(tape->l_znakow,sizeof(char));
+	for(int i = 0; i<tape->l_znakow; i++){	 
+		if(i == 0 || i == tape->l_znakow) tape->znak[i] = '!';
 		 else tape->znak[i] = '#';
 	}
-
+	skladnia->z_skladni=calloc(skladnia->l_z_skladni,sizeof(char));
 
 	return 0;
 }  

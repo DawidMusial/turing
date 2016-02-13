@@ -10,10 +10,9 @@
 	
 	char *znak;
 	int l_znakow;
-	skladnia_t skladnia;
 
 	} tape_t;
-int inicjuj(tape_t * tape,  int rozm_tasmy, int rozm_slownika);    //alokuje pamiec dla struktur
+int inicjuj_t(skladnia_t *skladnia, tape_t * tape);    //alokuje pamiec dla struktur
 
 int dodaj_do_skladni(skladnia_t *skladnia, char z); // dodaje znak do slwonika
 char wypisz_znak_ze_slownika(skladnia_t *skladnia, int i); //daje na wyjsciu kolejny znak se slownika i- nr znaku w slowniku
